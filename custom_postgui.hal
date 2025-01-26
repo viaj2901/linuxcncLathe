@@ -1,0 +1,23 @@
+# Include your custom_postgui HAL commands here
+# This file will not be overwritten when you run stepconf again
+
+setp scale.0.gain 60
+setp lowpass.0.gain 0.010000
+net spindle-velocity                            => lowpass.0.in
+net spindle-fb-filtered-rps      lowpass.0.out  => abs.0.in
+net spindle-fb-filtered-abs-rps  abs.0.out      => scale.0.in
+net spindle-fb-filtered-abs-rpm  scale.0.out    => pyvcp.spindle-speed
+net spindle-at-speed       => pyvcp.spindle-at-speed-led
+
+net spindle-ramped => pyvcp.spindle-command
+net spindle-temperature => pyvcp.spindle-temperature
+net spindle-fault => pyvcp.spindle-fault-led
+net spindle-fault-duration => pyvcp.spindle-fault-duration-led
+net spindle-fault-over-voltage => pyvcp.spindle-fault-over-voltage-led
+net spindle-fault-under-voltage => pyvcp.spindle-fault-under-voltage-led
+net spindle-fault-over-temperature => pyvcp.spindle-fault-over-temperature-led
+net spindle-fault-start-up => pyvcp.spindle-fault-start-up-led
+net spindle-fault-speed-feedback => pyvcp.spindle-fault-speed-feedback-led
+net spindle-fault-over-current => pyvcp.spindle-fault-over-current-led
+net spindle-fault-software-error => pyvcp.spindle-fault-software-error-led
+net spindle-fault-driver-protection => pyvcp.spindle-fault-driver-protection-led

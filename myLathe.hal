@@ -1,0 +1,13 @@
+net spindle-on => nvmpg.spindle-on
+net nvmpg-spingle-speed nvmpg.spindle-rpm <= spindle-vfd.spindle-RPM
+
+net spindle-position encoder.3.position => spindle.0.revs
+net spindle-velocity encoder.3.velocity => spindle.0.speed-in
+#net spindle-index-enable encoder.3.index-enable <=> spindle.0.index-enable
+
+loadrt abs count=1
+loadrt scale count=1
+loadrt lowpass count=1
+addf abs.0 servo-thread
+addf scale.0 servo-thread
+addf lowpass.0 servo-thread

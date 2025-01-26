@@ -1,0 +1,34 @@
+loadusr -Wn spindle-vfd stMcpDrive -n spindle-vfd
+net stMcpDriveActivateCoolingFan spindle-vfd.activate-cooling-fan => remora.output.04
+loadrt limit2 names=spindle-ramp
+# add the functions to a thread
+addf spindle-ramp servo-thread
+
+# set the parameter for max rate-of-change
+# (max spindle accel/decel in units per second)
+setp spindle-ramp.maxv 60
+
+# hijack the spindle speed out and send it to spindle ramp in
+net spindle-cmd <= spindle.0.speed-out => spindle-ramp.in
+# the output of spindle ramp is sent to the scale in
+net spindle-ramped <= spindle-ramp.out => spindle-vfd.speed-command
+
+net spindle-at-speed <= spindle-vfd.at-speed => spindle.0.at-speed
+net spindle-on <= spindle.0.on => spindle-vfd.spindle-on
+
+net spindle-temperature <= spindle-vfd.temperature
+
+net spindle-fault <= spindle-vfd.fault => spindle.0.amp-fault-in
+
+net spindle-fault-duration <= spindle-vfd.fault-duration
+net spindle-fault-over-voltage <= spindle-vfd.fault-over-voltage
+net spindle-fault-under-volate <= spindle-vfd.fault-under-voltage
+net spindle-fault-over-temperature <= spindle-vfd.fault-over-temperature
+net spindle-fault-start-up <= spindle-vfd.fault-start-up
+net spindle-fault-speed-feedback <= spindle-vfd.fault-speed-feedback
+net spindle-fault-over-current <= spindle-vfd.fault-over-current
+net spindle-fault-software-error <= spindle-vfd.fault-software-error
+net spindle-fault-driver-protection <= spindle-vfd.fault-driver-protection
+
+#Send Ack fault
+net user-request-enable <= iocontrol.0.user-request-enable	=> spindle-vfd.err-reset

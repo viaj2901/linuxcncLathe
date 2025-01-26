@@ -1,0 +1,93 @@
+# Halshow settings
+# This file is generated automatically.
+wm geometry . 707x579+68+148
+placeFrames 0.381294964028777
+set ::ratio 0.381294964028777
+set ::old_w_leftf 160
+set ::watchlist {
+    pin+remora.input.00
+    pin+remora.input.01
+    pin+remora.input.02
+    pin+remora.input.03
+    pin+remora.input.04
+    pin+remora.input.05
+    pin+remora.input.06
+    pin+remora.input.07
+    pin+remora.input.08
+    pin+remora.input.09
+    pin+remora.input.10
+    pin+remora.input.11
+    pin+remora.input.12
+    pin+remora.input.13
+    pin+remora.input.14
+    pin+remora.input.15
+    pin+remora.input.16
+    pin+remora.input.17
+    pin+remora.input.18
+    pin+remora.input.19
+    pin+remora.input.20
+    pin+remora.input.21
+    pin+remora.input.22
+    pin+remora.input.23
+    pin+remora.input.24
+    pin+remora.input.25
+    pin+remora.input.26
+    pin+remora.input.27
+    pin+remora.input.28
+    pin+remora.input.29
+    pin+remora.input.30
+    pin+remora.input.31
+    pin+remora.SP.0
+    pin+remora.output.00
+    pin+remora.SP.1
+    pin+remora.SP.2
+    pin+remora.SP.3
+    pin+spindle.0.on
+    pin+spindle.0.speed-out
+    pin+spindle.0.locked
+    pin+remora.output.01
+    pin+remora.output.02
+    pin+remora.output.04
+    pin+remora.output.05
+    pin+remora.output.06
+    pin+remora.output.07
+    pin+remora.output.08
+    pin+remora.output.09
+    pin+remora.output.10
+    pin+remora.output.11
+    pin+remora.output.12
+    pin+remora.output.13
+    pin+remora.output.14
+    pin+remora.output.15
+    pin+spindle.0.orient
+    pin+spindle.0.amp-fault-in
+    pin+nvmpg.spindle-on
+    pin+nvmpg.spindle-rpm
+    pin+encoder.0.counts-latched
+    pin+encoder.0.counts
+    sig+j0enable
+    sig+mpg-x
+    pin+axis.x.jog-counts
+    pin+axis.x.jog-enable
+    pin+remora.PV.0
+    pin+remora.PV.1
+    pin+remora.PV.2
+    pin+remora.PV.3
+    pin+encoder.3.index-enable
+    pin+encoder.3.phase-Z
+    pin+encoder.3.position
+    pin+encoder.3.position-scale
+    pin+encoder.3.raw_count
+    pin+encoder.3.reset
+    pin+encoder.3.velocity
+    sig+spindle-velocity
+    pin+pyvcp.spindle-speed
+    pin+pyvcp.spindle-at-speed-led
+}
+set ::workmode watchhal
+set ::watchInterval 100
+set ::col1_width 100
+set ::ffmts 
+set ::ifmts 
+set ::alwaysOnTop 0
+set ::autoSaveWatchlist 1
