@@ -5,63 +5,86 @@
          <bd>6</bd>
                 <label>
                         <text>"Spindle"</text>
-                        <font>("Cousine",20)</font>
+                        <font>("Cousine",17)</font>
                 </label>
                 <hbox>
                         <label>
-                                <text>"Temp "</text>
-                                <font>("Cousine",15)</font>
+                                <text>"Power:"</text>
+                                <font>("Cousine",10)</font>
                         </label>
-                        <bar>
+                </hbox>
+                <bar>
+                        <halpin>"spindle-output-power"</halpin>
+                        <max_>750</max_>
+                </bar>
+                <hbox>
+                        <label>
+                                <text>"Temp:    "</text>
+                                <font>("Cousine",10)</font>
+                        </label>
+                        <number> 
                                 <halpin>"spindle-temperature"</halpin>
-                                <max_>120</max_>
-                        </bar>
+                                <font>("Cousine",10)</font>
+                                <format>"d"</format>
+                        </number>
+                </hbox>
+                <hbox>
+                        <label>
+                                <text>"Voltage :"</text>
+                                <font>("Cousine",10)</font>
+                        </label>
+                        <number> 
+                                <halpin>"spindle-voltage"</halpin>
+                                <font>("Cousine",10)</font>
+                                <format>"d"</format>
+                        </number>
                 </hbox>
                 <hbox>
                         <label>
                                 <text>"Command: "</text>
-                                <font>("Cousine",15)</font>
+                                <font>("Cousine",10)</font>
                         </label>
                         <number> 
                                 <halpin>"spindle-command"</halpin>
-                                <font>("Cousine",15)</font>
+                                <font>("Cousine",10)</font>
                                 <format>"d"</format>
                         </number>
                 </hbox>
                 <hbox>
                         <label>
                                 <text>"Speed"</text>
-                                <font>("Cousine",15)</font>
+                                <font>("Cousine",10)</font>
                         </label>
-                        <bar>
+                        <number> 
                                 <halpin>"spindle-speed"</halpin>
-                                <max_>4000</max_>
-                        </bar>
+                                <font>("Cousine",10)</font>
+                                <format>"d"</format>
+                        </number>
                 </hbox>
                 <hbox>
                     <label>
                             <text>"At-Speed:         "</text>
-                            <font>("Cousine",15)</font>
+                            <font>("Cousine",10)</font>
                     </label>
                     <led>
                         <halpin>"spindle-at-speed-led"</halpin> 
-                        <size>15</size> 
+                        <size>10</size> 
                         <on_color>"green"</on_color>
                         <off_color>"red"</off_color>
                     </led>
                 </hbox>
                 <label>
                         <text>"Faults"</text>
-                        <font>("Cousine",18)</font>
+                        <font>("Cousine",17)</font>
                 </label>
                 <hbox>
                     <label>
                             <text>"Fault             "</text>
-                            <font>("Cousine",15)</font>
+                            <font>("Cousine",10)</font>
                     </label>
                     <led>
                         <halpin>"spindle-fault-led"</halpin> 
-                        <size>15</size> 
+                        <size>10</size> 
                         <on_color>"red"</on_color>
                         <off_color>"green"</off_color>
                     </led>
@@ -69,11 +92,11 @@
                 <hbox>
                     <label>
                             <text>"Duration          "</text>
-                            <font>("Cousine",15)</font>
+                            <font>("Cousine",10)</font>
                     </label>
                     <led>
                         <halpin>"spindle-fault-duration-led"</halpin> 
-                        <size>15</size> 
+                        <size>10</size> 
                         <on_color>"red"</on_color>
                         <off_color>"green"</off_color>
                     </led>
@@ -81,11 +104,11 @@
                 <hbox>
                     <label>
                             <text>"Over Voltage      "</text>
-                            <font>("Cousine",15)</font>
+                            <font>("Cousine",10)</font>
                     </label>
                     <led>
                         <halpin>"spindle-fault-over-voltage-led"</halpin> 
-                        <size>15</size> 
+                        <size>10</size> 
                         <on_color>"red"</on_color>
                         <off_color>"green"</off_color>
                     </led>
@@ -93,11 +116,11 @@
                 <hbox>
                     <label>
                             <text>"Under Voltage     "</text>
-                            <font>("Cousine",15)</font>
+                            <font>("Cousine",10)</font>
                     </label>
                     <led>
                         <halpin>"spindle-fault-under-voltage-led"</halpin> 
-                        <size>15</size> 
+                        <size>10</size> 
                         <on_color>"red"</on_color>
                         <off_color>"green"</off_color>
                     </led>
@@ -105,11 +128,11 @@
                 <hbox>
                     <label>
                             <text>"Over Temp         "</text>
-                            <font>("Cousine",15)</font>
+                            <font>("Cousine",10)</font>
                     </label>
                     <led>
                         <halpin>"spindle-fault-over-temperature-led"</halpin> 
-                        <size>15</size> 
+                        <size>10</size> 
                         <on_color>"red"</on_color>
                         <off_color>"green"</off_color>
                     </led>
@@ -117,11 +140,11 @@
                 <hbox>
                     <label>
                             <text>"Start Up          "</text>
-                            <font>("Cousine",15)</font>
+                            <font>("Cousine",10)</font>
                     </label>
                     <led>
                         <halpin>"spindle-fault-start-up-led"</halpin> 
-                        <size>15</size> 
+                        <size>10</size> 
                         <on_color>"red"</on_color>
                         <off_color>"green"</off_color>
                     </led>
@@ -129,11 +152,11 @@
                 <hbox>
                     <label>
                             <text>"Speed Feedback    "</text>
-                            <font>("Cousine",15)</font>
+                            <font>("Cousine",10)</font>
                     </label>
                     <led>
                         <halpin>"spindle-fault-speed-feedback-led"</halpin> 
-                        <size>15</size> 
+                        <size>10</size> 
                         <on_color>"red"</on_color>
                         <off_color>"green"</off_color>
                     </led>
@@ -141,11 +164,11 @@
                 <hbox>
                     <label>
                             <text>"Over Current      "</text>
-                            <font>("Cousine",15)</font>
+                            <font>("Cousine",10)</font>
                     </label>
                     <led>
                         <halpin>"spindle-fault-over-current-led"</halpin> 
-                        <size>15</size> 
+                        <size>10</size> 
                         <on_color>"red"</on_color>
                         <off_color>"green"</off_color>
                     </led>
@@ -153,11 +176,11 @@
                 <hbox>
                     <label>
                             <text>"Software Error    "</text>
-                            <font>("Cousine",15)</font>
+                            <font>("Cousine",10)</font>
                     </label>
                     <led>
                         <halpin>"spindle-fault-software-error-led"</halpin> 
-                        <size>15</size> 
+                        <size>10</size> 
                         <on_color>"red"</on_color>
                         <off_color>"green"</off_color>
                     </led>
@@ -165,13 +188,45 @@
                 <hbox>
                     <label>
                             <text>"Driver Protection "</text>
-                            <font>("Cousine",15)</font>
+                            <font>("Cousine",10)</font>
                     </label>
                     <led>
                         <halpin>"spindle-fault-driver-protection-led"</halpin> 
-                        <size>15</size> 
+                        <size>10</size> 
                         <on_color>"red"</on_color>
                         <off_color>"green"</off_color>
+                    </led>
+                </hbox>
+        </vbox>
+        <vbox>
+         <relief>RIDGE</relief>         
+         <bd>6</bd>
+                <label>
+                        <text>"Limit Switch"</text>
+                        <font>("Cousine",17)</font>
+                </label>
+                <hbox>
+                    <label>
+                            <text>"X Limit: "</text>
+                            <font>("Cousine",10)</font>
+                    </label>
+                    <led>
+                        <halpin>"x-limit-switch"</halpin> 
+                        <size>10</size> 
+                        <on_color>"green"</on_color>
+                        <off_color>"red"</off_color>
+                    </led>
+                </hbox>
+                <hbox>
+                    <label>
+                            <text>"Z Limit: "</text>
+                            <font>("Cousine",10)</font>
+                    </label>
+                    <led>
+                        <halpin>"z-limit-switch"</halpin> 
+                        <size>10</size> 
+                        <on_color>"green"</on_color>
+                        <off_color>"red"</off_color>
                     </led>
                 </hbox>
         </vbox>

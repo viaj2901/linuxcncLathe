@@ -34,7 +34,9 @@ loadrt [EMCMOT]EMCMOT base_period_nsec=[EMCMOT]BASE_PERIOD servo_period_nsec=[EM
 	net j0pos-cmd 		joint.0.motor-pos-cmd 	=> remora.joint.0.pos-cmd
 	net j0pos-fb 		remora.joint.0.pos-fb 	=> joint.0.motor-pos-fb
 	net j0enable 		joint.0.amp-enable-out 	=> remora.joint.0.enable
-
+	net both-home-x <= remora.input.13
+	net both-home-x => joint.0.home-sw-in
+	net both-home-x => joint.0.neg-lim-sw-in
 
 # joint 1 setup (Z axis)
 
@@ -45,7 +47,9 @@ loadrt [EMCMOT]EMCMOT base_period_nsec=[EMCMOT]BASE_PERIOD servo_period_nsec=[EM
 	net j1pos-cmd 		joint.1.motor-pos-cmd 	=> remora.joint.1.pos-cmd
 	net j1pos-fb 		remora.joint.1.pos-fb 	=> joint.1.motor-pos-fb
 	net j1enable 		joint.1.amp-enable-out 	=> remora.joint.1.enable
-
+	net both-home-z <= remora.input.14
+	net both-home-z => joint.1.home-sw-in
+	net both-home-z => joint.1.neg-lim-sw-in
 
 # joint 2 setup (Z axis)
 

@@ -11,6 +11,8 @@ net spindle-at-speed       => pyvcp.spindle-at-speed-led
 
 net spindle-ramped => pyvcp.spindle-command
 net spindle-temperature => pyvcp.spindle-temperature
+net spindle-voltage => pyvcp.spindle-voltage
+net spindle-output-power => pyvcp.spindle-output-power
 net spindle-fault => pyvcp.spindle-fault-led
 net spindle-fault-duration => pyvcp.spindle-fault-duration-led
 net spindle-fault-over-voltage => pyvcp.spindle-fault-over-voltage-led
@@ -21,3 +23,6 @@ net spindle-fault-speed-feedback => pyvcp.spindle-fault-speed-feedback-led
 net spindle-fault-over-current => pyvcp.spindle-fault-over-current-led
 net spindle-fault-software-error => pyvcp.spindle-fault-software-error-led
 net spindle-fault-driver-protection => pyvcp.spindle-fault-driver-protection-led
+
+net both-home-x => pyvcp.x-limit-switch
+net both-home-z => pyvcp.z-limit-switch
